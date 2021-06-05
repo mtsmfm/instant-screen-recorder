@@ -1,0 +1,43 @@
+{
+  "name": "Instant screen recorder",
+  "description": "Instant screen recorder",
+  "version": "0.1.0",
+  "icons": {
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "tabCapture",
+    "tabs",
+    "downloads"
+  ],
+  "browser_action": {
+    "default_icon": {
+      "128": "icons/icon128.png"
+    }
+  },
+  "commands": {
+    "start-or-stop": {
+      "suggested_key": {
+        "default": "Alt+Shift+S",
+        "mac": "Alt+Shift+S"
+      },
+      "description": "Start or stop recording"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "manifest_version": 2
+}
